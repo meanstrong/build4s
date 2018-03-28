@@ -13,9 +13,9 @@ def main():
     for arg in sys.argv:
         if arg.startswith("--spec-file="):
             spec_file = arg.split("=", 1)[1]
-        if arg.startswith("--target-file="):
+        elif arg.startswith("--target-file="):
             target_file = arg.split("=", 1)[1]
-        if arg == "-h" or arg == "--help":
+        elif arg == "-h" or arg == "--help":
             print_help()
             return
 
