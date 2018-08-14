@@ -2,11 +2,16 @@
 #-*- coding:utf-8 -*-
 
 from setuptools import setup, find_packages
-import build4s
-import time
+
+
+with open("README.md") as f:
+    readme = f.read()
+
+with open("LICENSE") as f:
+    license = f.read()
 
 setup(
-    name="Build4s",
+    name="build4s",
     version="0.0.1",
     packages=find_packages(exclude=["test*"]),
     # py_modules=["test"],
@@ -14,13 +19,16 @@ setup(
     install_requires=["PyYAML"],
     zip_safe=False,
 
-    description="A build tools",
+    url="https://github.com/meanstrong/build4s",
+    license=license,
+    description="A build tools for CodeBuild",
+    long_description=readme,
     author="pengmingqiang",
-    author_email="pmq2008@gmail.com",
+    author_email="rockypengchina@outlook.com",
+    maintainer="pengmingqiang",
+    maintainer_email="rockypengchina@outlook.com",
+    platforms=['any'],
 
-    license="GPL",
-    platforms="Independant",
-    url="",
     entry_points={
         'console_scripts': [
             'buildcli = build4s.cli:main',

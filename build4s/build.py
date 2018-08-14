@@ -34,11 +34,8 @@ class Build(object):
         return self
 
     def build(self):
-        try:
-            with open(self._spec_file, "r") as f:
-                buildspec = yaml.load(f.read())
-        except:
-            raise Exception("Not found file buildspec.yml.")
+        with open(self._spec_file, "r") as f:
+            buildspec = yaml.load(f.read())
 
         env = buildspec.get("env")
         if env is not None:
@@ -47,27 +44,28 @@ class Build(object):
 
         phases = buildspec.get("phases")
 
-        self.logger.info("phase install ...")
-        install = phases.get("install")
-        if install is not None:
-            self._run_commands(install.get("commands"))
+        if phases is not None:
+            self.logger.info("phase install ...")
+            install = phases.get("install")
+            if install is not None:
+                self._run_commands(install.get("commands"))
 
-        self.logger.info("phase pre_build ...")
-        pre_build = phases.get("pre_build")
-        if pre_build is not None:
-            self._run_commands(pre_build.get("commands"))
+            self.logger.info("phase pre_build ...")
+            pre_build = phases.get("pre_build")
+            if pre_build is not None:
+                self._run_commands(pre_build.get("commands"))
 
-        self.logger.info("phase build ...")
-        build = phases.get("build")
-        if build is not None:
-            self._run_commands(build.get("commands"))
+            self.logger.info("phase build ...")
+            build = phases.get("build")
+            if build is not None:
+                self._run_commands(build.get("commands"))
 
-        self.logger.info("phase post_build ...")
-        post_build = phases.get("post_build")
-        if post_build is not None:
-            self._run_commands(post_build.get("commands"))
+            self.logger.info("phase post_build ...")
+            post_build = phases.get("post_build")
+            if post_build is not None:
+                self._run_commands(post_build.get("commands"))
 
-        self.logger.info("artifacts ...")
+        self.logger.info("artifacts > %s ..." % self._target_file)
         self.artifacts(buildspec.get("artifacts"))
 
         self.logger.info("build OK.")

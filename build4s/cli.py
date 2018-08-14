@@ -29,7 +29,7 @@ def print_help():
     msg = '''
     Usage: buildcli --spec-file=buildspec_debug.yml
     Options:
-        --spec-file     The build spec file path.
+        --spec-file     The build spec file path, default is buildspec.yml.
         --target-file   The ZIP result filename.
     '''
     print(msg)
