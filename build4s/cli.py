@@ -4,7 +4,7 @@
 import sys
 import traceback
 
-from build import Build
+from .build import Build
 
 
 def main():
