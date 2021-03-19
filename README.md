@@ -1,5 +1,8 @@
 # Build4s - A build tool for simple, standard, stable and speed
 
+[![image](https://img.shields.io/pypi/v/build4s.svg)](https://pypi.org/project/build4s/)
+[![image](https://img.shields.io/pypi/l/build4s.svg)](https://pypi.org/project/build4s/)
+
 ## About
 受启发于AWS CodeBuild的自动化编译打包服务，抽取其中标准化编译打包功能实现的一个本地组件。[AWS CodeBuild User Guide](https://docs.aws.amazon.com/zh_cn/codebuild/latest/userguide/welcome.html)
 - Build提供了标准化的编译打包流程，可编译源代码，运行单元测试，并生成可供部署的项目。   
