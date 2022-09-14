@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#-*- coding:utf-8 -*-
+# -*- coding:utf-8 -*-
 
 from setuptools import setup, find_packages
 
@@ -25,7 +25,7 @@ setup(
     maintainer="pengmingqiang",
     maintainer_email="rockypengchina@outlook.com",
     platforms=['any'],
-    license="GPLv3",
+    license="Apache 2.0",
     entry_points={
         'console_scripts': [
             'buildcli = build4s.cli:main',
