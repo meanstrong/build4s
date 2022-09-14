@@ -1,5 +1,6 @@
 # Build4s - A build tool for simple, standard, stable and speed
 
+![image](https://img.shields.io/badge/made_in-china-ff2121.svg)
 [![image](https://img.shields.io/pypi/v/build4s.svg)](https://pypi.org/project/build4s/)
 [![image](https://img.shields.io/pypi/l/build4s.svg)](https://pypi.org/project/build4s/)
 
